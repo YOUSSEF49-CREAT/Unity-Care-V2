@@ -6,7 +6,7 @@ class UserRepository extends BaseRepository{
     {
     $sql = "SELECT * FROM users WHERE email = ?";
     $stmt = $this->pdo->prepare($sql);
-    $stmt->execute([$emaile]);
+    $stmt->execute([$email]);
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
