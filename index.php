@@ -7,4 +7,8 @@ switch($page){
     case 'login' :
         require 'login.php' ;
         break ;
+
+    case 'dashboard' :
+    require 'login.php' ;
+        break ;
 }

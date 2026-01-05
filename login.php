@@ -3,6 +3,13 @@ $error = null ;
 if($_SERVER['REQUEST_METOUD'] === 'POST'){
     $email = $_POST['email'] ;
     $password = $_POST['password'] ;
+
+    if (AuthController::login($email, $password)) {
+        header('Location: index.php?page=dashboard');
+        exit;
+    } else {
+        $error = "Invalid credentials";
+    }
 }
 ?>
 <!DOCTYPE html>
