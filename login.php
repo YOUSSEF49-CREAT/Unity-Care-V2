@@ -114,7 +114,7 @@ body {
   <form method="post">
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Password" required>
-    <button class="btn btn-primary">Login</button>
+    <button  class="btn btn-primary">Login</button>
   </form>
 </div>
 

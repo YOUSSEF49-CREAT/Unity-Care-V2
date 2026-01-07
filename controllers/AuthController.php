@@ -18,9 +18,22 @@ class AuthController{
 
         $_SESSION['user_id'] = $user['id'] ;
         $_SESSION['role'] = $user['role'] ;
-        $_SESSION['emaile'] = $user['emaile'] ;
+        $_SESSION['emaile'] = $user['email'] ;
 
         return true ;
+     }
+
+     public static function logout(){
+
+       
+
+         $_SESSION = [];
+
+         
+        session_destroy();
+
+        header('Location: index.php?page=login');
+        exit;
      }
 
 
