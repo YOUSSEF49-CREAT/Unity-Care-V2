@@ -40,4 +40,8 @@ switch($page){
     case 'doctor-store':
     DoctorController::store($_POST);
     break;
+
+    case 'doctor-delete':
+        DoctorController::delete((int)$_GET['id']);
+        break;
 }

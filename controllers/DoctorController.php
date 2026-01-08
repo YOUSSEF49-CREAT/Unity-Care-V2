@@ -20,4 +20,16 @@ class DoctorController{
         header('Location: index.php?page=admin-doctors');
         exit;
     } 
+
+
+    public static function delete(int $id): void
+    {
+        
+
+        $repo = new DoctorRepository(Database::connect());
+        $repo->delete($id);
+
+        header('Location: index.php?page=admin-doctors');
+        exit;
+    }
 }

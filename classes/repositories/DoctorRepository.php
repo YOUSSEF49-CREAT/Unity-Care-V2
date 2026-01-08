@@ -50,4 +50,14 @@ class DoctorRepository extends BaseRepository
             $d->getSpecialization()
         ]);
     }
+
+
+    public function delete(int $id): void
+    {
+        $stmt = $this->pdo->prepare(
+            "DELETE FROM users WHERE id =
+             (SELECT user_id FROM doctors WHERE id = ?)"
+        );
+        $stmt->execute([$id]);
+    }
 }
