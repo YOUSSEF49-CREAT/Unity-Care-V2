@@ -6,14 +6,9 @@ class Doctor extends User
     private string $lastName;
     private ?string $specialization;
 
-    public function __construct(
-        string $email,
-        string $password,
-        string $firstName,
-        string $lastName,
-        ?string $specialization = null
-    ) {
-        parent::__construct($email, $password, 'doctor');
+    public function __construct(string $email,string $password,string $firstName,string $lastName,string $username,?string $specialization) 
+    {
+        parent::__construct($email, $password, 'doctor',$username);
         $this->firstName = $firstName;
         $this->lastName  = $lastName;
         $this->specialization = $specialization;
@@ -33,4 +28,6 @@ class Doctor extends User
     public function getSpecialization(): ?string {
          return $this->specialization;
      }
+    
+    
 }

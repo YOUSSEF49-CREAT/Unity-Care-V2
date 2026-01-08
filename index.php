@@ -36,4 +36,8 @@ switch($page){
     case 'admin-doctors' :
     require 'views/admin/doctors.php';
         break ;
+
+    case 'doctor-store':
+    DoctorController::store($_POST);
+    break;
 }
