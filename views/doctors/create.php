@@ -22,12 +22,21 @@
             }
 
             /* Inputs */
-            .input-group {
+            .input-group , select {
                 margin-bottom: 15px;
             }
 
             .input-group input,
-            .input-group select {
+            .input-group select , select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccd1d9;
+                border-radius: 6px;
+                font-size: 14px;
+                transition: 0.3s;
+            }
+
+            select{
                 width: 100%;
                 padding: 10px;
                 border: 1px solid #ccd1d9;
@@ -37,7 +46,7 @@
             }
 
             .input-group input:focus,
-            .input-group select:focus {
+            .input-group select:focus , select{
                 border-color: #0d6efd;
                 outline: none;
                 box-shadow: 0 0 0 2px rgba(13,110,253,0.2);

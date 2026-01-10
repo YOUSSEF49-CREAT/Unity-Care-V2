@@ -7,6 +7,7 @@ require_once  'core/Auth.php';
 require_once  'controllers/AuthController.php';
 require_once __DIR__ . '/controllers/DepartmentController.php';
 require_once __DIR__ . '/controllers/DoctorController.php';
+require_once __DIR__ . '/controllers/PatientController.php';
 
 $page = $_GET['page'] ?? 'login';
 
@@ -65,6 +66,26 @@ switch ($page) {
 
     case 'doctor-show':
         DoctorController::show($_GET['id']);
+        break;
+
+    case 'Patients':
+    PatientController::index();
+    break;
+
+    case 'patient-create':
+        PatientController::create();
+        break;
+
+    case 'patient-store':
+        PatientController::store($_POST);
+        break;
+
+    case 'patient-delete':
+        PatientController::delete($_GET['id']);
+        break;
+
+    case 'patient-show':
+        PatientController::show($_GET['id']);
         break;
 
 
