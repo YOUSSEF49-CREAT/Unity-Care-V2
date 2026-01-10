@@ -1,42 +1,22 @@
-<?php 
+<?php
+class AuthController {
 
-class AuthController{
-     public static function login(string $email, string $password) : bool
-     {
-        $pdo = Database::connect();
-        $repo = new UserRepository($pdo);
+    public static function login($data) {
+        $login = $data['login'];
+        $password = $data['password'];
 
-        $user = $repo->findBayEmail($email);
-
-        if(!$user) {
-            return false ;
+        if (Auth::attempt($login, $password)) {
+            header("Location: index.php?page=dashboard");
+        } else {
+            $_SESSION['error'] = "Login ou mot de passe incorrect";
+            header("Location: index.php?page=login");
         }
-
-        if(!password_verify($password , $user['password'])){
-            return false ;
-        }
-
-        $_SESSION['user_id'] = $user['id'] ;
-        $_SESSION['role'] = $user['role'] ;
-        $_SESSION['emaile'] = $user['email'] ;
-
-        return true ;
-     }
-
-     public static function logout(){
-
-       
-
-         $_SESSION = [];
-
-         
-        session_destroy();
-
-        header('Location: index.php?page=login');
         exit;
-     }
+    }
 
-
-
-
+    public static function logout() {
+        Auth::logout();
+        header("Location: index.php?page=login");
+        exit;
+    }
 }

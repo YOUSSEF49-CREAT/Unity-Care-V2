@@ -1,23 +1,11 @@
 <?php
-
-class Database
-{
-    private static ?PDO $pdo = null;
-
-    public static function connect(): PDO
-    {
-        if (self::$pdo === null) {
-            self::$pdo = new PDO(
-                "mysql:host=localhost;dbname=db_care_clinic_v_deux;charset=utf8mb4",
-                "root",
-                "",
-                [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                ]
-            );
-        }
-
-        return self::$pdo;
+class Database {
+    public static function connect() {
+        return new PDO(
+            "mysql:host=localhost;dbname=hospital_management;charset=utf8",
+            "root",
+            "",
+            [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+        );
     }
 }
