@@ -5,6 +5,7 @@ require_once __DIR__ . '/config/Database.php';
 require_once  'core/Session.php';
 require_once  'core/Auth.php';
 require_once 'controllers/AuthController.php';
+require_once __DIR__ . '/controllers/DepartmentController.php';
 
 $page = $_GET['page'] ?? 'login';
 
@@ -28,6 +29,23 @@ switch ($page) {
     case 'logout':
         AuthController::logout();
         break;
+
+    case 'departments':
+        DepartmentController::index();
+    break;
+
+    case 'department-create':
+        require 'views/departments/create.php';
+        break;
+
+    case 'department-store':
+        DepartmentController::store($_POST);
+        break;
+
+    case 'department-delete':
+        DepartmentController::delete($_GET['id']);
+        break;
+
 
     default:
         echo "404";
