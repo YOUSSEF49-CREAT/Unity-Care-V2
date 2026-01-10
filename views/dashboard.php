@@ -62,8 +62,8 @@
     <div class="sidebar">
         <h2><i class="fa-solid fa-hospital"></i> Hospital</h2>
         <ul>
-            <li><a href="#"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
-            <li><a href="#"><i class="fa-solid fa-user-injured"></i> Patients</a></li>
+            <li><a href="index.php?page=doctors"><i class="fa-solid fa-user-doctor"></i> Doctors</a></li>
+            <li><a href=""><i class="fa-solid fa-user-injured"></i> Patients</a></li>
             <li><a href="index.php?page=departments"><i class="fa-solid fa-building"></i> Departments</a></li>
             <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Appointments</a></li>
             <li><a href="#"><i class="fa-solid fa-file-prescription"></i> Prescriptions</a></li>

@@ -4,8 +4,9 @@ session_start();
 require_once __DIR__ . '/config/Database.php';
 require_once  'core/Session.php';
 require_once  'core/Auth.php';
-require_once 'controllers/AuthController.php';
+require_once  'controllers/AuthController.php';
 require_once __DIR__ . '/controllers/DepartmentController.php';
+require_once __DIR__ . '/controllers/DoctorController.php';
 
 $page = $_GET['page'] ?? 'login';
 
@@ -44,6 +45,26 @@ switch ($page) {
 
     case 'department-delete':
         DepartmentController::delete($_GET['id']);
+        break;
+
+    case 'doctors':
+        DoctorController::index();
+    break;
+
+    case 'doctor-create':
+        DoctorController::create();
+        break;
+
+    case 'doctor-store':
+        DoctorController::store($_POST);
+        break;
+
+    case 'doctor-delete':
+        DoctorController::delete($_GET['id']);
+        break;
+
+    case 'doctor-show':
+        DoctorController::show($_GET['id']);
         break;
 
 
